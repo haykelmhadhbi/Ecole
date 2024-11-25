@@ -14,4 +14,6 @@ public interface IUtilisateurService {
     Utilisateur updateUtilisateur(Utilisateur utilisateur); // Mettre à jour un utilisateur
 
     Utilisateur getUtilisateurById(Integer idUtilisateur);
+    public void affecterUtilisateurClasse (Integer idUtilisateur, Integer codeClasse);
+
 }

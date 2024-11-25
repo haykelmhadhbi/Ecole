@@ -18,4 +18,12 @@ public class UtilisateurController {
         return  new ResponseEntity<>(createUtilisateur, HttpStatus.CREATED);
 
     }
+
+    @PatchMapping("/{idUtilisateur}/classe/{codeClasse}")
+    public ResponseEntity<String> affecterUtilisateurClasse(
+            @PathVariable Integer idUtilisateur,
+            @PathVariable Integer codeClasse) {
+        iUtilisateurService.affecterUtilisateurClasse(idUtilisateur, codeClasse);
+        return ResponseEntity.ok("Utilisateur affecté à la classe avec succès !");
+    }
 }
