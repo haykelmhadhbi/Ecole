@@ -1,6 +1,7 @@
 package tn.esprit.examenagil.iservices;
 
 import tn.esprit.examenagil.entities.Utilisateur;
+import tn.esprit.examenagil.enumeration.Niveau;
 
 import java.util.List;
 
@@ -15,5 +16,8 @@ public interface IUtilisateurService {
 
     Utilisateur getUtilisateurById(Integer idUtilisateur);
     public void affecterUtilisateurClasse (Integer idUtilisateur, Integer codeClasse);
+
+    public Integer nbUtilisateursParNiveau(Niveau nv);
+
 
 }

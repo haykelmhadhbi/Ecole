@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.examenagil.entities.Utilisateur;
+import tn.esprit.examenagil.enumeration.Niveau;
 import tn.esprit.examenagil.iservices.IUtilisateurService;
 
 @RestController
@@ -25,5 +26,11 @@ public class UtilisateurController {
             @PathVariable Integer codeClasse) {
         iUtilisateurService.affecterUtilisateurClasse(idUtilisateur, codeClasse);
         return ResponseEntity.ok("Utilisateur affecté à la classe avec succès !");
+    }
+
+    @GetMapping
+    public  ResponseEntity<Integer> getNbUtilisateursParNiveau (@RequestBody Niveau niveau){
+        Integer numb = iUtilisateurService.nbUtilisateursParNiveau(niveau);
+        return  new ResponseEntity<>(numb, HttpStatus.OK);
     }
 }

@@ -1,6 +1,8 @@
 package tn.esprit.examenagil.iservices;
 
 import tn.esprit.examenagil.entities.CoursClassroom;
+import tn.esprit.examenagil.enumeration.Niveau;
+import tn.esprit.examenagil.enumeration.Specialite;
 
 import java.util.List;
 
@@ -18,6 +20,10 @@ public interface ICoursClassroomService {
 
     public CoursClassroom ajouterCoursClassroom (CoursClassroom cc,  Integer codeClasse);
 
+    public void desaffecterCoursClassroomClasse(Integer idCours);
+
+    public void archiverCoursClassrooms();
+    public Integer nbHeuresParSpecEtNiv(Specialite sp, Niveau nv);
 
 
 }

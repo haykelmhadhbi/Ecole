@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tn.esprit.examenagil.entities.Classe;
 import tn.esprit.examenagil.entities.Utilisateur;
+import tn.esprit.examenagil.enumeration.Niveau;
 import tn.esprit.examenagil.iservices.IUtilisateurService;
 import tn.esprit.examenagil.repositories.ClasseRepository;
 import tn.esprit.examenagil.repositories.UtilisateurRepository;
@@ -60,5 +61,10 @@ public class UtilisateurService implements IUtilisateurService {
 
         utilisateur.setClasse(classe);
         utilisateurRepository.save(utilisateur);
+    }
+
+    @Override
+    public Integer nbUtilisateursParNiveau(Niveau nv) {
+        return utilisateurRepository.countByClasseNiveau(nv);
     }
 }

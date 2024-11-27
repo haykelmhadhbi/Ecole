@@ -5,5 +5,5 @@ import tn.esprit.examenagil.entities.CoursClassroom;
 
 public interface CoursClassroomRepository extends JpaRepository<CoursClassroom,Integer> {
 
-
+CoursClassroom findByNom (String nom);
 }
